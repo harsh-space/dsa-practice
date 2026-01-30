@@ -3,4 +3,5 @@
 # To ignore debug/output folders if you use them
 /bin/
 /build/
+.vscode/
 a.out
