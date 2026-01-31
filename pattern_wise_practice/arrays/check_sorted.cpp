@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//order checcked is non-decreasing
 int check_sorted(vector<int>&n){
     bool flag=true;
     for(int i=0;i<n.size()-1;i++){
