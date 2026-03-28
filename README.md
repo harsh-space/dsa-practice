@@ -24,10 +24,7 @@ The directory is primarily organized to keep things clean and easy to navigate:
 - The repository contains `.cpp` source files containing the problem-solving logic. (You'll also find some compiled `.exe` files from my local testing).
 
 ## Goals
-- ✅ Maintain consistency in solving algorithmic problems.
-- ✅ Master specific DSA patterns (sliding window, two pointers, etc.).
-- ✅ Get comfortable with Git and GitHub workflows.
-- ✅ Prepare for technical interviews and competitive programming.
-
----
-*Every journey has a beginning. This is the start of my open-source and GitHub chapter!*
+- Maintain consistency in solving algorithmic problems.
+- Master specific DSA patterns (sliding window, two pointers, etc.).
+- Get comfortable with Git and GitHub workflows.
+- Prepare for technical interviews and competitive programming.
