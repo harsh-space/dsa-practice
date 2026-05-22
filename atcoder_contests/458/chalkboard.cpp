@@ -1,134 +1,86 @@
 /*
+D - Chalkboard Median
 
-D - Chalkboard Median  / 
-Time Limit: 2 sec / Memory Limit: 1024 MiB
+Time Limit: 2 sec
+Memory Limit: 1024 MiB
 
-Score : 
+Score:
 400 points
 
 Problem Statement
-There is one integer 
-X written on a blackboard.
+There is one integer X written on a blackboard.
 
-You are given 
-Q queries to process in order. The 
-i-th query 
-(1≤i≤Q) is as follows.
+You are given Q queries to process in order.
+The i-th query (1 ≤ i ≤ Q) is as follows:
 
-Two integers 
-A 
-i
-​
-  and 
-B 
-i
-​
-  are given. Write two new integers 
-A 
-i
-​
-  and 
-B 
-i
-​
-  on the blackboard.
+Two integers Ai and Bi are given.
+Write two new integers Ai and Bi on the blackboard.
 
-Then, output the median of the 
-2i+1 integers written on the blackboard.
+Then, output the median of the 2i + 1 integers
+written on the blackboard.
 
 Constraints
-1≤X≤10 
-9
- 
-1≤Q≤2×10 
-5
- 
-1≤A 
-i
-​
- ,B 
-i
-​
- ≤10 
-9
- 
-All input values are integers.
+- 1 ≤ X ≤ 10^9
+- 1 ≤ Q ≤ 2 × 10^5
+- 1 ≤ Ai, Bi ≤ 10^9
+- All input values are integers.
+
 Input
-The input is given from Standard Input in the following format:
+The input is given from Standard Input
+in the following format:
 
 X
 Q
-A 
-1
-​
-  
-B 
-1
-​
- 
-A 
-2
-​
-  
-B 
-2
-​
- 
+A1 B1
+A2 B2
 ⋮
-A 
-Q
-​
-  
-B 
-Q
-​
- 
-Output
-Output 
-Q lines.
+AQ BQ
 
-The 
-i-th line should contain the answer to the 
-i-th query.
+Output
+Output Q lines.
+
+The i-th line should contain the answer
+to the i-th query.
 
 Sample Input 1
-
 5
 3
 2 3
 1 2
 8 9
-Sample Output 1
 
+Sample Output 1
 3
 2
 3
-In the first query, the integers written on the blackboard become 
-5,2,3, and their median is 
-3.
 
-In the second query, the integers written on the blackboard become 
-5,2,3,1,2, and their median is 
-2.
+Explanation:
+After the 1st query:
+Numbers on the blackboard = {5, 2, 3}
+Median = 3
 
-In the third query, the integers written on the blackboard become 
-5,2,3,1,2,8,9, and their median is 
-3.
+After the 2nd query:
+Numbers on the blackboard = {5, 2, 3, 1, 2}
+Median = 2
+
+After the 3rd query:
+Numbers on the blackboard = {5, 2, 3, 1, 2, 8, 9}
+Median = 3
 
 Sample Input 2
-
 1
 4
 2 3
 4 5
 6 7
 8 9
-Sample Output 2
 
+Sample Output 2
 2
 3
 4
 5
+
 Sample Input 3
 278117031
 7
@@ -139,8 +91,8 @@ Sample Input 3
 49913403 798318034
 89701408 892537201
 199166668 742285869
+
 Sample Output 3
-
 278117031
 278117031
 319926999
@@ -148,7 +100,6 @@ Sample Output 3
 319926999
 319926999
 319926999
-
 */
 
 

@@ -1,111 +1,83 @@
 /*
-B - Count Adjacent Cells  / 
-Time Limit: 2 sec / Memory Limit: 1024 MiB
+B - Count Adjacent Cells
 
-Score : 
+Time Limit: 2 sec
+Memory Limit: 1024 MiB
+
+Score:
 200 points
 
 Problem Statement
-There is a grid with 
-H rows and 
-W columns. The cell at the 
-i-th row from the top and the 
-j-th column from the left is denoted as cell 
-(i,j).
+There is a grid with H rows and W columns.
 
-Cells 
-(x1,y1) and 
-(x2,y2) are said to be edge-adjacent when 
-∣x1−x2∣+∣y1−y2∣=1.
+The cell at the i-th row from the top and
+the j-th column from the left is denoted
+as cell (i, j).
 
-For every cell, find the number of cells that are edge-adjacent to it.
+Cells (x1, y1) and (x2, y2) are said to be
+edge-adjacent when:
+
+|x1 - x2| + |y1 - y2| = 1
+
+For every cell, find the number of cells
+that are edge-adjacent to it.
 
 Constraints
-1≤H,W≤50
-All input values are integers.
-Input
-The input is given from Standard Input in the following format:
+- 1 ≤ H, W ≤ 50
+- All input values are integers.
 
-H 
-W
+Input
+The input is given from Standard Input
+in the following format:
+
+H W
+
 Output
 Output the answer in the following format:
 
-x 
-1,1
-​
-  
-x 
-1,2
-​
-  
-⋯ 
-x 
-1,W
-​
- 
-x 
-2,1
-​
-  
-x 
-2,2
-​
-  
-⋯ 
-x 
-2,W
-​
- 
+x1,1 x1,2 ... x1,W
+x2,1 x2,2 ... x2,W
 ⋮
-x 
-H,1
-​
-  
-x 
-H,2
-​
-  
-⋯ 
-x 
-H,W
-​
- 
-Here, 
-x 
-i,j
-​
-  represents the number of cells that are edge-adjacent to cell 
-(i,j).
+xH,1 xH,2 ... xH,W
+
+Here, xi,j represents the number of cells
+that are edge-adjacent to cell (i, j).
 
 Sample Input 1
 4 5
+
 Sample Output 1
 2 3 3 3 2
 3 4 4 4 3
 3 4 4 4 3
 2 3 3 3 2
-The cells edge-adjacent to cell 
-(1,5) are cells 
-(1,4),(2,5), for a total of two cells.
 
-The cells edge-adjacent to cell 
-(2,3) are cells 
-(1,3),(2,2),(2,4),(3,3), for a total of four cells.
+Explanation:
+- Cell (1,5) is adjacent to:
+  (1,4), (2,5)
+  → total = 2
 
-The cells edge-adjacent to cell 
-(4,2) are cells 
-(3,2),(4,1),(4,3), for a total of three cells.
+- Cell (2,3) is adjacent to:
+  (1,3), (2,2), (2,4), (3,3)
+  → total = 4
+
+- Cell (4,2) is adjacent to:
+  (3,2), (4,1), (4,3)
+  → total = 3
 
 Sample Input 2
 1 1
+
 Sample Output 2
 0
-There are no cells edge-adjacent to cell 
-(1,1).
+
+Explanation:
+There are no cells edge-adjacent
+to cell (1,1).
 
 Sample Input 3
 12 8
+
 Sample Output 3
 2 3 3 3 3 3 3 2
 3 4 4 4 4 4 4 3
