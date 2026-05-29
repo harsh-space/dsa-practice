@@ -67,3 +67,25 @@
     6 31
 
 */
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,x;
+    cin>>n>>x;
+    vector<int>arr(n+1,0);
+    for(int i=0;i<=n;i++){
+        cin>>arr[i];
+    }
+    vector<int>ans(n,0);
+    int ptr = 0;
+    cout << 0 << " " << arr[0] << "\n";
+    for(int i = 1; i <= n; i++){
+        if(abs(arr[ptr] - arr[i]) >= x){
+            ptr = i; 
+            cout << i << " " << arr[i] << "\n";
+        }
+    }
+
+    return 0;
+}
