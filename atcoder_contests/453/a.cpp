@@ -60,16 +60,16 @@ int main(){
     int n;
     string s;
     cin>>n>>s;
-    for(int i=0;i<n;i++){
-        if(s[i]=='o' && s[i]==s[i+1] )s[i]='1';
+    int p=0,q=0;
+    while(p<=q){
+        if(s[q]=='o')q++;
         else break;
     }
     string ans="";
-    for(int i=0;i<n;i++){
-        if(s[i]=='1')continue;
-        else ans+=s[i];
+    for(int i=q;i<n;i++){
+        ans+=s[i];
     }
-    cout<<s;
+    cout<<ans;
     
     return 0;
 
