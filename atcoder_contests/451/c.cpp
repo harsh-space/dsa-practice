@@ -127,33 +127,31 @@
     3
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
 
-int main(){
-
+int main() {
     int q;
-    cin >> q;
-    vector<pair<int,long long>> que;
-    for(int i = 0; i < q; i++){
+    if (!(cin >> q)) return 0;
+
+    priority_queue<long long, vector<long long>, greater<long long>> pq;
+
+    for (int i = 0; i < q; i++) {
         int t;
         long long h;
         cin >> t >> h;
-        que.push_back({t, h});
+
+        if (t == 1) {
+            pq.push(h);
+        } else {
+            while (!pq.empty() && pq.top() <= h) {
+                pq.pop();
+            }
+        }
+        cout << pq.size() << "\n";
     }
 
-    vector<long long> s;
-    
-    for(int i = 0; i < q; i++){
-        if(que[i].first == 1) {
-            s.push_back(que[i].second);
-        } 
-        else {
-            sort(s.begin(), s.end());
-            auto it = upper_bound(s.begin(), s.end(), que[i].second);
-            s.erase(s.begin(), it);
-        }
-        cout << s.size() << endl;
-    }
     return 0;
 }
+
