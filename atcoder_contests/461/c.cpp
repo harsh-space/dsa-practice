@@ -111,6 +111,9 @@
 using namespace std; 
 
 int main(){ 
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
     int n,k,m; 
     cin>>n>>k>>m; 
     vector<pair<int,long long>>gems; 
@@ -124,19 +127,17 @@ int main(){
     
     long long ans=0; 
     int r=k-m; 
-    vector<int>used; 
     set<int>us; 
     int j=0; 
     int cnt = 0; 
 
     while(j<gems.size() && cnt < k){ 
-        if(find(used.begin(),used.end(),gems[j].first)==used.end()){ 
+        if(us.count(gems[j].first) == 0){ 
             us.insert(gems[j].first); 
             ans+=gems[j].second; 
-            used.push_back(gems[j].first); 
             cnt++; 
         } 
-        else if(find(used.begin(),used.end(),gems[j].first)!=used.end() && (r!=0 || us.size() >= m)){ 
+        else if(us.count(gems[j].first) > 0 && (r!=0 || us.size() >= m)){ 
             ans+=gems[j].second; 
             if(us.size() < m) r--; 
             cnt++; 
@@ -146,3 +147,4 @@ int main(){
     cout<<ans; 
     return 0; 
 }
+
