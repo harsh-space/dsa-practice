@@ -77,22 +77,33 @@
         6
 */
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main(){
+int main()
+{
 
-    int n,l,r;
+    int n, l, r;
     string s;
 
-    cin>>n>>l>>r;
-    cin>>s;
-    long long cnt=0;
-    for(int i=0;i<n;i++){
-        for(int j=i;j<n;j++){
-            if(s[i]==s[j] && (j-i<=r && j-i>=l))cnt++;
+    cin >> n >> l >> r;
+    cin >> s;
+    long long cnt = 0;
+    unordered_map<char, vector<int>> mp;
+    for (int i = 0; i < n; i++)
+    {
+        mp[s[i]].push_back(i);
+    }
+    for (auto it : mp)
+    {
+        auto const& v = it.second;
+        for (int i = 0; i < v.size();i++)
+        {
+            auto low = lower_bound(v.begin(), v.end(),v[i]+l );
+            auto high=upper_bound(v.begin(),v.end(),v[i]+r);
+            cnt+=high-low;
         }
     }
-    cout<<cnt;
+    cout << cnt;
     return 0;
 }
