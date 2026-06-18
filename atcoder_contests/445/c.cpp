@@ -81,7 +81,7 @@
 
 //17/18 cases passed
 
-#include <bits/stdc++.h>
+/*#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
@@ -116,5 +116,33 @@ int main()
 
     for (int i = 1; i <= n; i++)
         cout << ans[i] << " ";
+    return 0;
+}*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    vector<int> ar(n + 1);
+    for (int i = 1; i <= n; i++) {
+        cin >> ar[i];
+    }
+    
+    vector<int> ans(n + 1);
+    for (int i = n; i >= 1; i--) {
+        if (ar[i] == i) {
+            ans[i] = i; 
+        } else {
+            ans[i] = ans[ar[i]];
+        }
+    }
+    
+    for (int i = 1; i <= n; i++) {
+        cout << ans[i] << (i == n ? "" : " ");
+    }
+    
     return 0;
 }
