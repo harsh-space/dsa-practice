@@ -36,6 +36,29 @@ Node *connect(Node *root)
     }
     return root;
 }
+void printConnections(Node* root) {
+    if (!root) return;
+    queue<Node*> q;
+    q.push(root);
+    
+    while (!q.empty()) {
+        int size = q.size();
+        for (int i = 0; i < size; i++) {
+            Node* curr = q.front();
+            q.pop();
+            
+            // Print current node value and its next target
+            cout << curr->val << "->";
+            if (curr->next) cout << curr->next->val;
+            else cout << "NULL";
+            cout << "   ";
+            
+            if (curr->left) q.push(curr->left);
+            if (curr->right) q.push(curr->right);
+        }
+        cout << "\n"; // Newline for each tier
+    }
+}
 int main()
 {
     Node *root = new Node(1);
@@ -47,5 +70,6 @@ int main()
 
     cout << "Connecting next pointers...\n";
     root = connect(root);
+    printConnections(root);
     return 0;
 }
