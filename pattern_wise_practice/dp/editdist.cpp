@@ -1,12 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int editdist(int i,int j,int m,int n,string &s,string&r){
-    if(j<0)return i+1;
-    if(i<0)return j+1;
-    if(s[i]==r[j])return editdist(i-1,j-1,m,n,s,r);
+int editdist(int i,int j,int m,int n,string &s,string&r,vector<vector<int>>&dp){
+    if(j==0)return i;
+    if(i==0)return j;
+    if(dp[i][j]!=-1)return dp[i][j];
+    if(s[i-1]==r[j-1])return dp[i][j]=editdist(i-1,j-1,m,n,s,r,dp);
     // string ns=s+r[j];
-    return 1+min({editdist(i-1,j-1,m,n,s,r),editdist(i,j-1,m,n,s,r),editdist(i-1,j,m,n,s,r)});
+    return dp[i][j]=1+min({editdist(i-1,j-1,m,n,s,r,dp),editdist(i,j-1,m,n,s,r,dp),editdist(i-1,j,m,n,s,r,dp)});
 }
 
 int main(){
@@ -14,6 +15,7 @@ int main(){
     string b="rose";
     int m=a.size();
     int n=b.size();
-    cout<<editdist(m-1,n-1,m,n,a,b);
+    vector<vector<int>>dp(m+1,vector<int>(n+1,-1));
+    cout<<editdist(m,n,m,n,a,b,dp);
     return 0;
 }
